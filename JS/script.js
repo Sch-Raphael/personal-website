@@ -128,7 +128,7 @@ function loadRandom() {
   // Base URLs for different sources
   var baseUrls = {
     "steam": "https://steamuserimages-a.akamaihd.net/ugc/",
-    "ibb": "https://i.ibb.co/"
+    "local": "./IMG/bg/"
   };
 
   // Array containing the URLs or relative paths of the background images
@@ -146,16 +146,14 @@ function loadRandom() {
     "steam:2027218894809984359/B6673AF9B63D7E6AB31D19CDA247954B00D7B3BB/",
     "steam:2465231303170401801/634B0AC41D4E14A1A119D3A0B2177DEB8D98F8D6/",
 
-    "ibb:10H2G1M/MC-Base-Profile-Screenshot-2024-05-19-01-04-22-86.png",
-    "ibb:HCFVPcd/MC-Base-Profile-Screenshot-2024-05-18-23-21-15-20.png",
-    "ibb:mzvhjdj/MC-Base-Profile-Screenshot-2024-05-19-00-30-32-28.png",
-    "ibb:ZYvbb89/MC-Base-Profile-Screenshot-2024-05-19-00-30-48-28.png",
-    "ibb:j8xmQ8p/MC-Base-Profile-Screenshot-2024-05-19-00-31-01-42.png",
-    "ibb:pQ13J11/MC-Base-Profile-Screenshot-2024-05-19-00-31-50-77.png",
-    "ibb:6wKV6rD/MC-Base-Profile-Screenshot-2024-05-19-01-03-53-32.png",
-    "ibb:Db1z7Tn/MC-Base-Profile-Screenshot-2024-05-19-01-12-08-84.png",
-    "ibb:CKdbM0z/MC-Base-Profile-Screenshot-2024-05-19-01-10-03-34.png",
-    "ibb:26S5mVf/Base-Profile-Screenshot-2024-05-19-00-53-47-39.png",
+    "local:MC-1.png",
+    "local:MC-2.png",
+    "local:MC-3.png",
+    "local:MC-4.png",
+    "local:MC-5.png",
+    "local:MC-6.png",
+    "local:MC-7.png",
+    "local:MC-8.png",
   ];
 
   // Generate a random index to select a random background image URL
@@ -182,7 +180,7 @@ function loadRandom() {
   // Wait for the image to load
   image.onload = function() {
     // Apply the background to the body and set its priority to high
-    document.body.style.backgroundImage = "url('" + bg + "')";
+    document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('${bg}')`;
     document.body.style.setProperty("fetchpriority", "high", "important");
   };
 
