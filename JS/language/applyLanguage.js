@@ -1,9 +1,21 @@
-var language = "en"
+// Get the system language
+var systemLanguage = navigator.language || navigator.userLanguage;
 
-// store the strings
+// Function to check and set the language
+function setLanguage(lang) {
+    if (lang !== "en" && lang !== "de") {
+        lang = "en";
+    }
+    return lang;
+}
+
+// Set the language based on the system language
+var language = setLanguage(systemLanguage.slice(0, 2));
+
+// Store the strings
 const translation = {};
 
-// load translation strings from defined language
+// Load translation strings from the defined language
 async function loadTranslations(language) {
     return await fetch(`./JS/language/translations/translation_${language}.json`)
         .then(response => response.json())
@@ -11,6 +23,11 @@ async function loadTranslations(language) {
             translation[language] = data;
         });
 }
+
+// Load translations for the current language
+loadTranslations(language).then(() => {
+    console.log('Translations loaded:', translation[language]);
+});
 
 
 
