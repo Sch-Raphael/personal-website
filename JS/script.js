@@ -180,7 +180,8 @@ function loadRandom() {
   // Wait for the image to load
   image.onload = function() {
     // Apply the background to the body and set its priority to high
-    document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('${bg}')`;
+    document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('${bg}') no-repeat`;
+    document.body.style.backgroundSize = "cover";
     document.body.style.setProperty("fetchpriority", "high", "important");
   };
 
