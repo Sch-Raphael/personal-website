@@ -1,4 +1,4 @@
-# personal-website v2.9.1 win95 edition
+# personal-website v2.9.3 win95 edition
 
 ![image](https://github.com/user-attachments/assets/93b7871d-9cd8-4718-b750-7a304ed8524d)
 [Try it here! (cookie0o.github.io/personal-website)](https://cookie0o.github.io/personal-website/)   
