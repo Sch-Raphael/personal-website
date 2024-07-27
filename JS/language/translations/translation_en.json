@@ -12,11 +12,13 @@
     "guest_book_txt" : "Guest Book",
     "webring_txt"    : "Webrings",
     "music_txt"      : "Music",
+    "background_txt" : "Background",
 
     "socialstitle"   : "Socials",
     "guestbooktitle" : "Guest Book",
     "webringtitle"   : "Webrings",
     "musictitle"     : "Music",
+    "backgroundtitle": "Background",
 
     "recyclebintitle": "Recycle Bin",
     "categorie1"     : "Name",
@@ -32,5 +34,7 @@
     "deleteditems5"  : "700 b...",
 
     "aboutmetitle"   : "About Me - Notepad",
-    "text"           : "<strong class='title_txt'>Hi!</strong><br><br>Thank you for visiting my personal site,<br>I love programming, and I have been writing code for about 2 years now.<br>I started with my current favorite programming language, Python!<br>I also know a bit of Lua, a bit of JavaScript, and HTML/CSS.<br>Though HTML/CSS isn't really a programming language.<br><br><br>- Raphael."
+    "text"           : "<strong class='title_txt'>Hi!</strong><br><br>Thank you for visiting my personal site,<br>I love programming, and I have been writing code for about 2 years now.<br>I started with my current favorite programming language, Python!<br>I also know a bit of Lua, a bit of JavaScript, and HTML/CSS.<br>Though HTML/CSS isn't really a programming language.<br><br><br>- Raphael.",
+
+    "applybtn"       : "Apply"
 }

@@ -48,12 +48,14 @@ function updateContent(translation, language) {
         document.getElementById('guest_book_txt').innerText = translation[language].guest_book_txt;
         document.getElementById('webring_txt').innerText = translation[language].webring_txt;
         document.getElementById('music_txt').innerText = translation[language].music_txt;
+        document.getElementById('background_txt').innerText = translation[language].background_txt;
         // apps (windows)
         // other titles
         document.getElementById('socialstitle').innerText = translation[language].socialstitle;
         document.getElementById('guestbooktitle').innerText = translation[language].guestbooktitle;
         document.getElementById('webringtitle').innerText = translation[language].webringtitle;
         document.getElementById('musictitle').innerText = translation[language].musictitle;
+        document.getElementById('backgroundtitle').innerText = translation[language].backgroundtitle;
         // Recycle Bin
         document.getElementById('recyclebintitle').innerText = translation[language].recyclebintitle;
         document.getElementById('categorie1').innerText = translation[language].categorie1;
@@ -70,6 +72,8 @@ function updateContent(translation, language) {
         // About Me
         document.getElementById('aboutmetitle').innerText = translation[language].aboutmetitle;
         document.getElementById('text').innerHTML = translation[language].text;
+        // Background
+        document.getElementById('background_applybtn').innerHTML = translation[language].applybtn;
     });
 };
 // Initial content update

@@ -37,8 +37,14 @@ const Music = document.getElementById('music');
   const music_TXT = document.getElementById('music_txt');
   const music_closebtn = document.getElementById('music_closebtn');
 
+const Background = document.getElementById('background');
+  const background_titlebar = document.getElementById('background_titlebar');
+  const background_ICO = document.getElementById('background_ico');
+  const background_TXT = document.getElementById('background_txt');
+  const background_closebtn = document.getElementById('background_closebtn');
 
-const titlebarIds = ['recycle-bin', 'about-me', "socials", "guest-book", "webring", "music"];
+
+const titlebarIds = ['recycle-bin', 'about-me', "socials", "guest-book", "webring", "music", "background"];
 
 // make a window draggable
 function dragElement_windows(window, titlebar) {
@@ -86,6 +92,7 @@ dragElement_windows(Socials, document.getElementById("socials_titlebar"));
 dragElement_windows(Guest_Book, document.getElementById("guest_book_titlebar"));
 dragElement_windows(Webring, document.getElementById("webring_titlebar"));
 dragElement_windows(Music, document.getElementById("music_titlebar"));
+dragElement_windows(Background, document.getElementById("background_titlebar"));
 
 // change z index of clicked windows
 const zindexInactive = 991;
@@ -113,7 +120,7 @@ function window_close(window) {
   window.style.display = 'none';
 };
 
-function initializeResize(window, minW = 20, minH = 20, music=false, maxW, maxH) {
+function initializeResize(window, minW = 20, minH = 20, music=false, background=false, maxW, maxH) {
   return function (e) {
     e.preventDefault();
     
@@ -137,6 +144,11 @@ function initializeResize(window, minW = 20, minH = 20, music=false, maxW, maxH)
       // if its the music window change the height of the spotify embed dynamically
       if (music != false) {
         document.getElementById("spotify_embed_iframe").style.height = `${(limitedHeight - 63)}px`;;
+      }
+
+      // if its the background window change the height of the background scroll area dynamically
+      if (background != false) {
+        document.getElementById("scrolling_container").style.height = `${(limitedHeight - 100)}px`;;
       }
     }
 
@@ -181,7 +193,7 @@ Recycle_Bin_ICO.addEventListener("click", function() {
 
 Recycle_Bin_closebtn.addEventListener('click', () => {window_close(Recycle_Bin)});
 // make window
-Recycle_Bin.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Recycle_Bin, 593, 200, false, 593));
+Recycle_Bin.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Recycle_Bin, 593, 200, false, false, 593));
 
 // check is something else is clicked and reset selection
 document.addEventListener('click', function(event) {
@@ -411,7 +423,7 @@ music_ICO.addEventListener("click", function() {
 
 music_closebtn.addEventListener('click', () => {window_close(Music);});
 // make window
-Music.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Music, 330, 160, true, null, 400));
+Music.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Music, 330, 160, true, false, null, 400));
 
 // check is something else is clicked and reset selection
 document.addEventListener('click', function(event) {
@@ -425,3 +437,48 @@ document.addEventListener('click', function(event) {
   }
 });
 
+
+
+// Background
+let lastClickTime_background = 0;
+let isWaiting_background = false;
+background_ICO.addEventListener("click", function() {
+  const currentTime = new Date().getTime();
+  // run second function if clicked again within 700ms
+  if (currentTime - lastClickTime_background <= 600 && !isWaiting_background) {
+    // remove selection
+    background_TXT.style.border = "none";
+    background_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+   
+    // open win
+    Background.style.display = 'block';
+    
+    // reset
+    isWaiting_background = true;
+    // simulate waiting for 700ms and then reset isWaiting_background
+    setTimeout(function() {
+      isWaiting_background = false;
+    }, 700);
+  } else {
+    // show that the app is selected
+    background_TXT.style.border = "1px dotted white";
+    background_TXT.style.background = "linear-gradient(rgba(0, 0, 170, 0.5), rgba(0, 0, 170, 0.5))";
+  }
+  lastClickTime_background = currentTime;
+});
+
+background_closebtn.addEventListener('click', () => {window_close(Background);});
+// make window
+Background.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Background, 465, 465, false, true, null, null));
+
+// check is something else is clicked and reset selection
+document.addEventListener('click', function(event) {
+  const clickedElement_background= event.target;
+  // Check if the clicked element is not the excluded element (background_ICO)
+  if (clickedElement_background !== background_ICO) {
+    // reset selection and reset style
+    background_TXT.style.border = "none";
+    background_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+    isWaiting_background = false;
+  }
+});

@@ -12,11 +12,13 @@
     "guest_book_txt" : "Gästebuch",
     "webring_txt"    : "Webringe",
     "music_txt"      : "Musik",
+    "background_txt" : "Hintergrund",
 
     "socialstitle"   : "Soziales",
     "guestbooktitle" : "Gästebuch",
     "webringtitle"   : "Webringe",
     "musictitle"     : "Musik",
+    "backgroundtitle": "Hintergrund",
 
     "recyclebintitle": "Papierkorb",
     "categorie1"     : "Name",
@@ -32,5 +34,7 @@
     "deleteditems5"  : "700 B...",
 
     "aboutmetitle"   : "Über mich - Editor",
-    "text"           : "<strong class='title_txt'>Hallo!</strong><br><br>Danke für den Besuch meiner persönlichen Seite,<br>ich liebe Programmierung und schreibe seit etwa 2 Jahren Code.<br>Ich habe mit meiner derzeitigen Lieblingsprogrammiersprache Python begonnen!<br>Ich kenne auch ein bisschen Lua, ein bisschen JavaScript und HTML/CSS.<br>Obwohl HTML/CSS eigentlich keine Programmiersprache ist.<br><br><br>- Raphael."
+    "text"           : "<strong class='title_txt'>Hallo!</strong><br><br>Danke für den Besuch meiner persönlichen Seite,<br>ich liebe Programmierung und schreibe seit etwa 2 Jahren Code.<br>Ich habe mit meiner derzeitigen Lieblingsprogrammiersprache Python begonnen!<br>Ich kenne auch ein bisschen Lua, ein bisschen JavaScript und HTML/CSS.<br>Obwohl HTML/CSS eigentlich keine Programmiersprache ist.<br><br><br>- Raphael.",
+
+    "applybtn"       : "Auswählen"
 }

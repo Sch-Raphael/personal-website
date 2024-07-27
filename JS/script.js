@@ -12,6 +12,42 @@ var nobtn_exitmsg = document.getElementById('nobtn');
 
 var userLanguage
 
+// Base URLs for different sources
+var baseUrls = {
+  "steam": "https://steamuserimages-a.akamaihd.net/ugc/",
+  "local": "./IMG/bg/"
+};
+
+// Array containing the URLs or relative paths of the background images
+var backgrounds = [
+  "steam:2032857200428334921/602AFD1E3D8AD05F15A8F9A4CF18BCAC550098F9/",
+  "steam:2408935303712749509/63AD24A580E82F917FA29FA056563B91DE4250F6/",
+  "steam:2408935303712756203/1430AACC505FAACA9BAFC8F4AE6629D294BCB3D3/",
+  "steam:2465231303170403926/A7FE168534B860D53EE1E206A022B94AD2DC265A/",
+  "steam:2032857200428334407/7326B885BDD2F0940C8ECDE5827BC359681C0F8A/",
+  "steam:2032857200428335511/5F446354D114DDD98F206E8F4B36001DC0E6306C/",
+  "steam:2408935303712753609/D9276C29D5F2B6F23A64CE70175F581B7F866B0E/",
+  "steam:2408935303712757926/072034F1F69F40D290ABCA5813766D833700F1AC/",
+  "steam:2408935303712757579/52B881ADEDC39E5E50D21918234E67D4FED6097D/",
+  "steam:1813239499465677235/3379799A35851884439A38332978E5B6B9DFEAD6/",
+  "steam:2027218894809984359/B6673AF9B63D7E6AB31D19CDA247954B00D7B3BB/",
+  "steam:2465231303170401801/634B0AC41D4E14A1A119D3A0B2177DEB8D98F8D6/",
+  "steam:2408935303712755992/1E8B6D53889165080B503E26F92CE5D19B487698/",
+  "steam:2408935303712755838/1FB60547738ACE9466414B6EE6196535B8A7C967/",
+  "steam:2408935303712755558/B71F441A07EC8F81D5B0C1C93A4E6BAC15A20417/",
+  "steam:2461857409038437986/F181EB5BF8174F0092475381173056515C0D1FD6/",
+
+  "local:MC-1.png",
+  "local:MC-2.png",
+  "local:MC-3.png",
+  "local:MC-4.png",
+  "local:MC-5.png",
+  "local:MC-6.png",
+  "local:MC-7.png",
+  "local:MC-8.png",
+];
+
+
 // generate a random string with a given length
 function RandomString(length) {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
@@ -125,37 +161,6 @@ shutdownbtn.addEventListener('click', () => {
 
 // Function to change the background to a random background
 function loadRandom() {
-  // Base URLs for different sources
-  var baseUrls = {
-    "steam": "https://steamuserimages-a.akamaihd.net/ugc/",
-    "local": "./IMG/bg/"
-  };
-
-  // Array containing the URLs or relative paths of the background images
-  var backgrounds = [
-    "steam:2032857200428334921/602AFD1E3D8AD05F15A8F9A4CF18BCAC550098F9/",
-    "steam:2408935303712749509/63AD24A580E82F917FA29FA056563B91DE4250F6/",
-    "steam:2408935303712756203/1430AACC505FAACA9BAFC8F4AE6629D294BCB3D3/",
-    "steam:2465231303170403926/A7FE168534B860D53EE1E206A022B94AD2DC265A/",
-    "steam:2032857200428334407/7326B885BDD2F0940C8ECDE5827BC359681C0F8A/",
-    "steam:2032857200428335511/5F446354D114DDD98F206E8F4B36001DC0E6306C/",
-    "steam:2408935303712753609/D9276C29D5F2B6F23A64CE70175F581B7F866B0E/",
-    "steam:2408935303712757926/072034F1F69F40D290ABCA5813766D833700F1AC/",
-    "steam:2408935303712757579/52B881ADEDC39E5E50D21918234E67D4FED6097D/",
-    "steam:1813239499465677235/3379799A35851884439A38332978E5B6B9DFEAD6/",
-    "steam:2027218894809984359/B6673AF9B63D7E6AB31D19CDA247954B00D7B3BB/",
-    "steam:2465231303170401801/634B0AC41D4E14A1A119D3A0B2177DEB8D98F8D6/",
-
-    "local:MC-1.png",
-    "local:MC-2.png",
-    "local:MC-3.png",
-    "local:MC-4.png",
-    "local:MC-5.png",
-    "local:MC-6.png",
-    "local:MC-7.png",
-    "local:MC-8.png",
-  ];
-
   // Generate a random index to select a random background image URL
   var randomIndex = Math.floor(Math.random() * backgrounds.length);
   var rawBg = backgrounds[randomIndex];
@@ -189,3 +194,52 @@ function loadRandom() {
   localStorage.setItem("lastbg", rawBg);
 }
 loadRandom();
+
+
+
+function background_window_selection() {
+  var selectedImage = null;
+
+  function createImageBox(url) {
+    var [source, path] = url.split(":");
+    var fullUrl = baseUrls[source] + path;
+
+    var box = document.createElement('div');
+    box.classList.add('image-box');
+    box.style.backgroundImage = `url(${fullUrl})`;
+    box.addEventListener('click', function() {
+      document.querySelectorAll('.image-box').forEach(function(box) {
+        box.classList.remove('selected');
+      });
+      box.classList.add('selected');
+      selectedImage = fullUrl;
+    });
+    return box;
+  }
+
+  function initializeImageSelector() {
+    var imageGrid = document.getElementById('image-grid');
+    backgrounds.forEach(function(url) {
+      var imageBox = createImageBox(url);
+      imageGrid.appendChild(imageBox);
+    });
+
+    document.getElementById('background_applybtn').addEventListener('click', function() {
+      if (selectedImage) {
+        var image = new Image();
+        image.src = selectedImage;
+        image.onload = function() {
+          document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('${selectedImage}') no-repeat`;
+          document.body.style.backgroundSize = "cover";
+          document.body.style.setProperty("fetchpriority", "high", "important");
+        };
+      } else {
+        console.log('No image selected');
+      }
+    });
+  }
+
+  // Call the function to initialize the image selector
+  initializeImageSelector();
+}
+background_window_selection()
