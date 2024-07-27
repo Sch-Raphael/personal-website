@@ -170,3 +170,31 @@
   font-size: 18px;
   color: white;
 }
+
+/* Background */
+.desktop .background-ico {
+  position: absolute;
+  width: 100px;
+  height: 70px;
+  left: 140px;
+  top: 258px;
+
+  background-color: transparent;
+  border: 0px;
+
+  background-image: url('../IMG/ico/monitor_application.png');
+  background-repeat: no-repeat;
+  background-position: 25px center;
+  background-size: 60px 60px;
+
+  text-align: center;
+} .desktop .background-ico .txt {
+  position: absolute;
+  top: 60px;
+
+  width: 98px;
+
+  font-family: "win95";
+  font-size: 18px;
+  color: white;
+}
