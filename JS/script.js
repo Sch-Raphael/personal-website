@@ -37,14 +37,14 @@ var backgrounds = [
   "steam:2408935303712755558/B71F441A07EC8F81D5B0C1C93A4E6BAC15A20417/",
   "steam:2461857409038437986/F181EB5BF8174F0092475381173056515C0D1FD6/",
 
-  "local:MC-1.png",
-  "local:MC-2.png",
-  "local:MC-3.png",
-  "local:MC-4.png",
-  "local:MC-5.png",
-  "local:MC-6.png",
-  "local:MC-7.png",
-  "local:MC-8.png",
+  "local:MC-1.avif",
+  "local:MC-2.avif",
+  "local:MC-3.avif",
+  "local:MC-4.avif",
+  "local:MC-5.avif",
+  "local:MC-6.avif",
+  "local:MC-7.avif",
+  "local:MC-8.avif",
 ];
 
 
