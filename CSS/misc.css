@@ -3,7 +3,7 @@
   left: 44px;
   bottom: 57px;
   
-  background-image: url('../IMG/line.png');
+  background-image: url('../IMG/line.avif');
   background-repeat: no-repeat;
   
   width: 224px;
@@ -44,7 +44,7 @@
     border-left-color: #F5FFFF;
     border-top-color: #F5FFFF;
 
-    background-image: url('../IMG/win95.png');
+    background-image: url('../IMG/win95.avif');
     background-repeat: no-repeat;
     background-size: 27px 30px;
     background-position: bottom 10px;
@@ -67,7 +67,7 @@
     border-right-color: #F5FFFF;
     border-bottom-color: #F5FFFF;
 
-    background-image: url('../IMG/ico/calendar.png');
+    background-image: url('../IMG/ico/calendar.avif');
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: left 7px top 3px;
@@ -103,7 +103,7 @@
 
     background-color: #868A8E;
 
-    background-image: url('../IMG/logo.png');
+    background-image: url('../IMG/logo.avif');
   }
   .startmenu .shutdownbtn {
     position: absolute;
@@ -115,7 +115,7 @@
     border: none;
     background-color: transparent;
 
-    background-image: url('../IMG/ico/shutdown.png');
+    background-image: url('../IMG/ico/shutdown.avif');
     background-repeat: no-repeat;
     background-size: 60px 60px;
     background-position: left 5px top -6px;
@@ -184,7 +184,7 @@
 
     border-width: 0.5px;
 
-    background-image: url('../IMG/close.png');
+    background-image: url('../IMG/close.avif');
     background-repeat: no-repeat;
     background-size: 20px 20px;
   }
@@ -197,7 +197,7 @@
     width: 55px;
     height: 55px;
 
-    background-image: url('../IMG/error.png');
+    background-image: url('../IMG/error.avif');
     background-repeat: no-repeat;
     background-size: 55px 55px;
   }

@@ -19,7 +19,7 @@
 
   border-width: 0.5px;
 
-  background-image: url('../IMG/close.png');
+  background-image: url('../IMG/close.avif');
   background-repeat: no-repeat;
   background-size: 20px 20px;
 } 
@@ -108,7 +108,7 @@ a:visited {
     width: 22px;
     height: 22px;
 
-    background-image: url('../IMG/ico/recycle_bin_full.png');
+    background-image: url('../IMG/ico/recycle_bin_full.avif');
     background-repeat: no-repeat;
     background-size: 20px 20px;
   }
@@ -233,7 +233,7 @@ a:visited {
     width: 22px;
     height: 22px;
 
-    background-image: url('../IMG/ico/text_file.png');
+    background-image: url('../IMG/ico/text_file.avif');
     background-repeat: no-repeat;
     background-size: 20px 20px;
   }
@@ -317,7 +317,7 @@ a:visited {
     width: 22px;
     height: 22px;
 
-    background-image: url('../IMG/ico/computer.png');
+    background-image: url('../IMG/ico/computer.avif');
     background-repeat: no-repeat;
     background-size: 20px 20px;
   }
@@ -420,7 +420,7 @@ a:visited {
     width: 22px;
     height: 22px;
 
-    background-image: url('../IMG/ico/block.png');
+    background-image: url('../IMG/ico/block.avif');
     background-repeat: no-repeat;
     background-size: 20px 20px;
   }
@@ -517,7 +517,7 @@ a:visited {
     width: 22px;
     height: 22px;
 
-    background-image: url('../IMG/ico/globe_map.png');
+    background-image: url('../IMG/ico/globe_map.avif');
     background-repeat: no-repeat;
     background-size: 20px 20px;
   }
@@ -547,7 +547,7 @@ a:visited {
 
       margin-top: 35px;
 
-      background-image: url("../IMG/404notfound.png");
+      background-image: url("../IMG/404notfound.avif");
       background-size: contain;
       background-repeat: no-repeat;
     }
@@ -597,7 +597,7 @@ a:visited {
     width: 22px;
     height: 22px;
 
-    background-image: url('../IMG/ico/loudspeaker.png');
+    background-image: url('../IMG/ico/loudspeaker.avif');
     background-repeat: no-repeat;
     background-size: 20px 20px;
   }
@@ -682,7 +682,7 @@ a:visited {
     width: 22px;
     height: 22px;
 
-    background-image: url('../IMG/ico/monitor_application.png');
+    background-image: url('../IMG/ico/monitor_application.avif');
     background-repeat: no-repeat;
     background-size: 20px 20px;
   }
